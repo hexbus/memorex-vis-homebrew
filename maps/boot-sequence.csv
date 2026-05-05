@@ -1,0 +1,8 @@
+step,actor,action,vis_specific
+1,Phoenix BIOS,POST and option-ROM scan,no
+2,D8800 option ROM,custom boot handoff into VIS runtime,yes
+3,D8960 boot core,EXEC COMMAND,yes
+4,ROM EXEC resolver,resolve COMMAND through ROM export table,yes
+5,COMMAND,"EXEC mscdex, gbios, redir, roma, romb, tlaunch",yes
+6,TLAUNCH,wait for media and CONTROL.TAT,yes
+7,TLAUNCH,launch title or minwin b:,yes

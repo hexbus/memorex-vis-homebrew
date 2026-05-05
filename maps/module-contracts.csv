@@ -1,0 +1,9 @@
+module,range_or_entry,role,visenv_v0_3_stub
+COMMAND,0xDC3C0,fixed dispatcher,run startup sequence
+MSCDEX,0xDC460,CD-ROM/media layer,INT 21h/2Fh file services
+GBIOS,0xE1660,VISBIOS services,INT 15h/2Fh service families
+REDIR,0xE8AD0,config/redirector,INT 6Fh/config provider
+ROMA,C000 probe,external ROM,ER signature probe
+ROMB,C400 probe,external ROM,ER signature probe
+MINWIN,0xE1580,Modular Windows starter,F4000 handoff log
+TLAUNCH,0xE9880,title launcher,CONTROL.TAT open/read/parse

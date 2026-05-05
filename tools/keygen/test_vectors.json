@@ -1,0 +1,12 @@
+{
+  "source_note": "Validation vectors from known REGISTER.EXE behavior. 513 material may be used only to add validation vectors, not copied as source.",
+  "vectors": [
+    {
+      "vendor": 500,
+      "product": 1,
+      "class": "A",
+      "key": "fF<kJ+L?0[WZ)C!_%[K0",
+      "confidence": "known public screenshot/vector"
+    }
+  ]
+}

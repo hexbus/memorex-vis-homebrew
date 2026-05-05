@@ -1,0 +1,10 @@
+area,visible_marking,probable_role,confidence,homebrew_implication
+CPU,AMD N80L286-12/S,80286 CPU,high,real-mode DOS/286 foundation
+ROM,TI TMS27C240-12 x2,BIOS/runtime ROM pair,high,1 MiB ROM extraction model
+custom logic,LSI Logic L1A7628,custom VIS/video/system logic,medium-high,GBIOS/video stubs should be VIS-specific
+custom logic,Tandy ADC1 520-01,Tandy ASIC/glue,medium,platform-specific services likely
+audio,Yamaha YMF262-M,OPL3/FM synth,high,AdLib/OPL audio path
+audio,Sanyo LC7883KM,audio DAC,high,wave/output path
+cdrom,Mitsumi CRMC-F002L,CD-ROM drive,high,A: CD/media model
+video,Sony CXA-style encoder,analog video encoder,medium,TV-safe output constraints
+front/input,Tandy front board + 74HC logic,front/control/input interface,medium,input path still needs tracing

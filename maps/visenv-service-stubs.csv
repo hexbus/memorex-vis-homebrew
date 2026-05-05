@@ -1,0 +1,8 @@
+service,owner,implemented_in_scaffold,next
+INT21 AH=3Dh open,FakeDos,yes,support more path styles
+INT21 AH=3Fh read,FakeDos,yes,DOS-like offsets/buffers
+INT21 AH=4Bh EXEC,FakeDos/RomExecResolver,yes,real media executable launch
+INT15 AX=7100h,GBIOS,registered only,callable dispatcher
+INT15 AX=7101h,GBIOS,registered only,hand-controller stub
+INT2Fh,MSCDEX/GBIOS/REDIR/TLAUNCH,registered only,callable chain
+INT6Fh,REDIR,registered only,config provider API
