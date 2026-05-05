@@ -39,6 +39,7 @@ Not finished yet:
 - Complete GBIOS service contract mapping.
 - Byte-complete annotated disassembly for every ROM module.
 - Hardware validation of every documented video/input/audio behavior.
+- A hardware supported development environment (i.e. Can we take a BlueSCSI DB25, build an adapter, and hook it to the Panasonic IDC40 header on the VIS, and send new images to the "CD-ROM" over Wi-Fi?  We would need to revise the firmware "engine" of the BlueSCSI to support a Panasonic CDROM (proprietary) instead of SCSI, and build a simple adapter, but it could be done.
 
 ## Quick start
 
