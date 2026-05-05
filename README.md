@@ -84,6 +84,10 @@ Start here:
 6. [VISENV guide](docs/getting-started/visenv-guide.md)
 7. [Roadmap to 1.0](docs/roadmap.md)
 
+## See also
+
+[TJBChris' Memorex VIS Repo](https://github.com/TJBChris/memorex_vis)
+
 ## Legal
 
 This repository does **not** include BIOS ROMs, Microsoft SDK files, commercial VIS titles, or proprietary source drops.
