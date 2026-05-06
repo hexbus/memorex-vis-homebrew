@@ -1,0 +1,170 @@
+# VIS Mitsumi/Gryphon CD-ROM Driver ROM Map
+
+This is a concise ROM map for the embedded VIS Mitsumi/Gryphon CD-ROM driver.
+
+## Driver identity
+
+```text
+0xED067  cd.sys /m:18 /i:5 /t:5 /d:mscd001 /h
+0xED0A7  Copyright (C) Mitsumi corporation 1989,1990,1991
+0xF14A2  GRYPHON CD-ROM device driver - Version is 2(33) 29-Sep-92
+```
+
+## DOS device-driver header
+
+Header begins at:
+
+```text
+0xED08D
+```
+
+Decoded fields:
+
+```text
+next pointer       FF FF FF FF
+attributes         0xC800
+strategy offset    0x098B
+interrupt offset   0x0996
+placeholder name   12345678
+```
+
+Approximate resolved entries:
+
+```text
+strategy entry     0xEDA18
+interrupt entry    0xEDA23
+```
+
+## MSCDEX relationship
+
+The VIS ROM MSCDEX layer scans DOS device headers looking for an `MSCD00`-style prefix.
+
+The embedded driver command line uses:
+
+```text
+/d:mscd001
+```
+
+So the driver is expected to register as:
+
+```text
+MSCD001
+```
+
+MSCDEX sees it through the shared prefix:
+
+```text
+MSCD00
+```
+
+## Command-line options seen in ROM
+
+Current embedded command line:
+
+```text
+cd.sys /m:18 /i:5 /t:5 /d:mscd001 /h
+```
+
+Working interpretation:
+
+```text
+/D  device name, patches DOS device-driver header name
+/I  IRQ/vector selection; current ROM uses IRQ 5
+/M  buffer/sector count; current ROM uses 18 decimal
+/T  parsed but durable effect not fully confirmed
+/H  probes INT 2Fh AX=4300/4310 host/hardware service
+```
+
+Additional parsed options:
+
+```text
+/P  accepted but no visible durable assignment in this ROM path
+/U  door lock/unlock behavior
+/A  alternate feature flag
+/N  boolean path flag
+```
+
+## Important driver variables
+
+```text
+0x0061       command/data port candidate
+0x0063       status/phase port candidate
+0x0069-006B  start MSF BCD
+0x006C-006E  secondary MSF / count fields
+0x00C5       drive mode byte
+0x00C6       interrupt/vector selector
+0x00C7       PIC mask value
+0x00C8       PIC EOI/vector value
+0x00CB       buffer count
+0x00CD       transfer count base
+0x00ED/00EF  transfer progress counters
+0x0101/0103  transfer-size limits
+0x03C8       retry counter
+```
+
+## Important routines
+
+```text
+0xEDA18  strategy entry
+0xEDA23  interrupt entry / dispatcher
+0xEF656  request command 80h handler, primary read path
+0xEF8C7  sends C0 M S F 00 00 01
+0xF08AB  generalized C0 packet helper
+0xF094C  status/data read helper
+0xF070F  MSF conversion helper
+0xF071E  BCD-like conversion helper
+0xF0CD9  INIT handler
+```
+
+## Primary read packet
+
+The clearest read packet:
+
+```text
+0xEF8C7-0xEF8EF
+
+C0, [0069], [006A], [006B], 00, 00, 01
+```
+
+Meaning:
+
+```text
+0xC0  Mitsumi read command
+0069  minute, BCD-ish
+006A  second, BCD-ish
+006B  frame, BCD-ish
+00
+00
+01    sector count
+```
+
+Generalized helper:
+
+```text
+0xF08AB-0xF08DC
+
+C0, [0069], [006A], [006B], [006C], [006D], [006E]
+```
+
+## Status/phase behavior
+
+The driver polls the candidate status/phase port at `0x0063` and watches low-nibble phase values:
+
+```text
+0x0B
+0x0D
+```
+
+Then it reads response/data from the candidate command/data port at `0x0061`.
+
+Working status-bit labels from repeated ROM use:
+
+```text
+0x40  ready / command accepted style bit
+0x20  media change / attention style bit
+0x08  data/status phase branch bit
+0x04  completion/data-ready branch bit
+0x02  state/error branch bit
+```
+
+These names are software-derived working labels, not yet hardware-trace-confirmed.
