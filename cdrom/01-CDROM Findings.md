@@ -1,4 +1,4 @@
-# Memorex/Tandy VIS CD-ROM Findings: Mitsumi, not ATAPI/SCSI
+# Memorex/Tandy VIS CD-ROM Findings: Mitsumi - CMRC-FR model, proprietary interface (like Tandy CDR-1000)
 
 This is a consolidated summary of the VIS CD-ROM analysis for homebrew and preservation work.
 
