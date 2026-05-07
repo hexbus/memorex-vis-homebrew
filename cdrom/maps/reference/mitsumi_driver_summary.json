@@ -1,0 +1,18 @@
+{
+  "command_line_address": "0xED067",
+  "driver_base": "0xED08D",
+  "driver_end_exclusive": "0xF14C0",
+  "driver_size_bytes": 17459,
+  "driver_md5": "e54f1e81944b880e02a47d319bf59cef",
+  "header": {
+    "next_pointer": "ff ff ff ff",
+    "attributes": "0xC800",
+    "strategy_offset": "0x098B",
+    "strategy_address": "0xEDA18",
+    "interrupt_offset": "0x0996",
+    "interrupt_address": "0xEDA23",
+    "placeholder_name": "12345678"
+  },
+  "version_string_address": "0xF14A2",
+  "version_string": "GRYPHON CD-ROM device driver - Version is 2(33) 29-Sep-92"
+}

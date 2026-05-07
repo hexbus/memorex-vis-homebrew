@@ -1,0 +1,11 @@
+command,name,VIS evidence,minimum replacement behavior
+0x40,status,Written frequently before most operations,Return ready/no-error status with bits matching VIS expected phases.
+0x50,set drive mode,Written with mode parameter before transfer,Accept mode values 0x00/0x01/0x61/0xC1 without failing.
+0x70,hold/pause,Written during retry/cleanup paths,Acknowledge and stop/hold transfer state.
+0x90,configure,Written as 0x90 0x04 0x00/0x01,Accept configuration sequence and report success.
+0x10,TOC/disk info,Command write detected; needed for CD filesystem setup,"Return one data track, leadout/capacity information."
+0xDC,version,Command write detected,Return a plausible Mitsumi/Gryphon-compatible version response.
+0xC0,read 1x,Command 80h sends C0 M S F 00 00 count,"Accept MSF BCD packet, convert to LBA, stream 2048-byte sectors."
+0xFE,door lock/unlock,Used by /U path,Accept lock/unlock and report success.
+0xF6,eject,Command write detected,Can no-op success for fixed tray/headless replacement.
+0xF8,close tray,Command write detected,Can no-op success for fixed tray/headless replacement.

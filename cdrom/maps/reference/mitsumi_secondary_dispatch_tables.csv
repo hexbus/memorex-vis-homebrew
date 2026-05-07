@@ -1,0 +1,34 @@
+subdispatch,command_hex,standard_name,table_offset,handler_offset,handler_address
+command_0C_ioctl_output_subdispatch,0x00,INIT,0x0559,0x0B69,0xEDBF6
+command_0C_ioctl_output_subdispatch,0x01,MEDIA CHECK,0x0559,0x0BB1,0xEDC3E
+command_0C_ioctl_output_subdispatch,0x02,BUILD BPB,0x0559,0x0C36,0xEDCC3
+command_0C_ioctl_output_subdispatch,0x03,IOCTL INPUT,0x0559,0x0C95,0xEDD22
+command_0C_ioctl_output_subdispatch,0x04,INPUT / READ,0x0559,0x0F9C,0xEE029
+command_0C_ioctl_output_subdispatch,0x05,NON-DESTRUCTIVE INPUT,0x0559,0x0E4E,0xEDEDB
+command_0C_ioctl_output_subdispatch,0x06,INPUT STATUS,0x0559,0x1F22,0xEEFAF
+command_0C_ioctl_output_subdispatch,0x07,INPUT FLUSH,0x0559,0x0FC8,0xEE055
+command_0C_ioctl_output_subdispatch,0x08,OUTPUT / WRITE,0x0559,0x0FEA,0xEE077
+command_0C_ioctl_output_subdispatch,0x09,OUTPUT WITH VERIFY,0x0559,0x1F22,0xEEFAF
+command_0C_ioctl_output_subdispatch,0x0A,OUTPUT STATUS,0x0559,0x1F22,0xEEFAF
+command_0C_ioctl_output_subdispatch,0x0B,OUTPUT FLUSH,0x0559,0x10ED,0xEE17A
+command_0C_ioctl_output_subdispatch,0x0C,IOCTL OUTPUT,0x0559,0x120D,0xEE29A
+command_0C_ioctl_output_subdispatch,0x0D,DEVICE OPEN,0x0559,0x121A,0xEE2A7
+command_0C_ioctl_output_subdispatch,0x0E,DEVICE CLOSE,0x0559,0x12E8,0xEE375
+command_0C_ioctl_output_subdispatch,0x0F,REMOVABLE MEDIA,0x0559,0x130D,0xEE39A
+command_0C_ioctl_output_subdispatch,0x10,extended/vendor command,0x0559,0x1396,0xEE423
+command_0C_ioctl_output_subdispatch,0x11,extended/vendor command,0x0559,0x1476,0xEE503
+command_03_ioctl_input_subdispatch,0x00,INIT,0x0567,0x0FC8,0xEE055
+command_03_ioctl_input_subdispatch,0x01,MEDIA CHECK,0x0567,0x0FEA,0xEE077
+command_03_ioctl_input_subdispatch,0x02,BUILD BPB,0x0567,0x1F22,0xEEFAF
+command_03_ioctl_input_subdispatch,0x03,IOCTL INPUT,0x0567,0x1F22,0xEEFAF
+command_03_ioctl_input_subdispatch,0x04,INPUT / READ,0x0567,0x10ED,0xEE17A
+command_03_ioctl_input_subdispatch,0x05,NON-DESTRUCTIVE INPUT,0x0567,0x120D,0xEE29A
+command_03_ioctl_input_subdispatch,0x06,INPUT STATUS,0x0567,0x121A,0xEE2A7
+command_03_ioctl_input_subdispatch,0x07,INPUT FLUSH,0x0567,0x12E8,0xEE375
+command_03_ioctl_input_subdispatch,0x08,OUTPUT / WRITE,0x0567,0x130D,0xEE39A
+command_03_ioctl_input_subdispatch,0x09,OUTPUT WITH VERIFY,0x0567,0x1396,0xEE423
+command_03_ioctl_input_subdispatch,0x0A,OUTPUT STATUS,0x0567,0x1476,0xEE503
+command_03_ioctl_input_subdispatch,0x0B,OUTPUT FLUSH,0x0567,0x14FD,0xEE58A
+command_03_ioctl_input_subdispatch,0x0C,IOCTL OUTPUT,0x0567,0x15BB,0xEE648
+command_03_ioctl_input_subdispatch,0x0D,DEVICE OPEN,0x0567,0x164C,0xEE6D9
+command_03_ioctl_input_subdispatch,0x0E,DEVICE CLOSE,0x0567,0x1DA5,0xEEE32

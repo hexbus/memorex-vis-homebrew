@@ -1,0 +1,7 @@
+handler,address,name,confidence,evidence,replacement_relevance
+0x80,0xEF656,READ_SECTORS / TRANSFER_DATA,high,"Builds MSF/BCD fields, sends 0x40 status, sends 0xC0 read packet, enters interrupt/counter transfer loop.",Critical. This is the path needed for A:\CONTROL.TAT and title file reads.
+0x82,0xEFE93,GET_POSITION_OR_STATUS_WITH_MSF,medium,"Consumes/stores MSF-like fields, uses status checks, branches on the same media/ready flags as read path.",Implement as status/position response tolerant of current read pointer.
+0x83,0xF000E,GET_SINGLE_POSITION_OR_COMPACT_STATUS,medium,Smaller sibling of 82h. Uses request-supplied position/state fields and status polling.,Likely safe to return stable ready/current-position data in prototype.
+0x84,0xF01A0,RANGE_COMMAND / PLAY_OR_RANGE_TRANSFER,medium,Builds start/end MSF fields and can issue a 0xC0 packet with special/zero count. Uses 0x50 mode changes.,"Probably not required for first CONTROL.TAT read, but useful for full title/audio compatibility."
+0x85,0xF051A,MEDIA_STATUS_OR_CURRENT_LOCATION,medium-high,"Sends 0x40 status and 0x70 hold/pause, checks media/attention bits, stores/returns MSF-ish fields.",Return ready/no-change status and current MSF for prototype.
+0x88,0xF0652,MEDIA_READY_CHANGE_GATE,medium-high,"Checks cached media flags, sends 0x40 status, evaluates media/ready/error bits.","Important. Replacement should consistently report disc present, ready, no media change once mounted."

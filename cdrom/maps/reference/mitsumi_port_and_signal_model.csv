@@ -1,0 +1,12 @@
+software_item,working_role,hardware_relation,confidence
+0x0061,command/data port candidate,"Drive data register selected by HA0/HA1 through VIS glue; command bytes and packet bytes are written here, responses are read here.",high
+0x0063,status/phase port candidate,Drive status/phase register candidate; low nibble is polled before reading data/response from 0x0061.,high
+0x00D4 write 0x05,VIS glue poke,"Probably controller, DMA, interrupt, or transfer-gate sideband not present in simple mcdx base+0..3 model.",medium
+0x00C6,interrupt/vector selector,Selects INT 0B/0C/0D/0F/73 path based on IRQ setting and /H service behavior.,high
+0x00C7,PIC mask value,Applied to PIC mask when interrupt vector is installed.,high
+0x00C8,EOI/vector-related value,Written to PIC command port after installing vector.,medium-high
+HA0/HA1,register select,40-pin Mitsumi bus address pins selecting one of four drive registers.,high from pinout
+HD0-HD7,8-bit bus,Bidirectional command/data/status byte lane.,high from pinout
+IOR*/IOW*/ENABLE*,host strobes,Host read/write/select strobes for the selected Mitsumi register.,high from pinout
+IRQ,interrupt,Likely corresponds to /i:5 and vector installation path.,high
+DRQ/DACK*,DMA handshake,May be used by data transfer loop; ROM suggests interrupt/counter/glue-assisted movement but not enough to prove exact line use.,medium

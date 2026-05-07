@@ -1,0 +1,10 @@
+option,handler,current_setting,variables,result
+/D,0xF107F,mscd001,device header +0x0A,Patches driver name so MSCDEX finds MSCD001 via MSCD00 prefix.
+/I,0xF10D7,5,"0x00C6=05, 0x00C7=DF, 0x00C8=65",Selects IRQ/vector path; with 5 it uses INT 0D branch in command 80h.
+/M,0xF1164,18,"0x00CB,0x00CD",Sets buffer/sector count state.
+/T,0xF10B9,5,no durable assignment confirmed,Accepted/parsed; likely compatibility/timing no-op or indirectly consumed.
+/H,0xF12A2,present,0x0509/0x050A/0x050C,Probes INT 2Fh AX=4300/4310 and stores host-service mode/pointer.
+/P,0xF1073,not present,none confirmed,Accepted but no visible port-base assignment; VIS uses built-in mapping/defaults.
+/U,0xF11ED,not present,0x03BD,Door lock/unlock behavior using 0xFE command path.
+/A,0xF126A,not present,0x04F3,Alternate feature flag.
+/N,0xF0D7B,not present,0x04FF,Boolean behavior flag.

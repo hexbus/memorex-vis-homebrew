@@ -1,0 +1,3 @@
+address,packet_shape,meaning
+0xEF8C7,C0 [0069] [006A] [006B] 00 00 01,single-sector read at current start MSF
+0xF08AB,C0 [0069] [006A] [006B] [006C] [006D] [006E],generalized C0 packet helper

@@ -1,0 +1,7 @@
+request_command,handler,software_role,drive_commands_seen_or_expected,plain_english
+0x80,0xEF656,primary sector-read / transfer path,"0x40 status, 0x50 mode, 0xC0 read, 0x70 hold on retry","Core data path. Builds MSF fields, sends C0 read packet, enters interrupt/counter-assisted data movement."
+0x82,0xEFE93,position/status or seek-style request,0x40 status; uses MSF fields and status bits,"Prepares start MSF and interrogates status; likely current position, media status, or seek/read-state related."
+0x83,0xF000E,single-position/status request,0x40 status; similar status testing,Smaller sibling of 0x82; request-supplied position fields and compact state return.
+0x84,0xF01A0,range-based command path,"0x40 status, 0x50 mode, 0xC0 packet with zero/special count",Builds start/end MSF ranges and can issue C0; likely play/range or special transfer/control path.
+0x85,0xF051A,media/status/hold path,"0x40 status, 0x70 hold","Polls status, checks media/attention bits, stores or returns MSF-like state fields."
+0x88,0xF0652,ready/media gate,0x40 status,Checks cached media flags and status bits to report ready/change/error state.
